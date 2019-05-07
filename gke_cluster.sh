@@ -73,6 +73,21 @@ connect)
 	gcloud container clusters get-credentials ${CLUSTER_NAME} --zone ${ZONE} --project ${PROJECT_ID}
 	kubectl config current-context
 	;;
+info)
+	echo ""
+	echo " Actual context:"
+	echo " ---------------"
+	kubectl config current-context
+	echo ""
+	echo " Cluster info:"
+	echo " -------------"
+	kubectl cluster-info
+	echo ""
+	echo " Cluster nodes:"
+	echo " -------------"
+	kubectl get nodes
+	echo ""
+	;;
 *)
 	help
 	;;
