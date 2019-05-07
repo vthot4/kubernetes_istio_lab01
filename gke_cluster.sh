@@ -27,7 +27,7 @@ help()
 	echo $0:
 	echo "	create	Create a cluster gke with the specifications in CONSTANTS."
 	echo "	delete	Delete gke cluster"
-    echo "  resize  Resize cluster ( resize N)"
+    echo "	resize  Resize cluster ( resize N)"
 	echo "	help	show help"
 	echo ""		
 }
@@ -60,10 +60,10 @@ delete)
     ;;
 
 resize)
-    if [ -z "$2"]; then
+    if [ -z "$2" ]; then
         echo "You must provide a valid number of nodes"
     else
-        gcloud container clusters resize ${CLUSTER_NAME} --size=$2
+        gcloud container clusters resize ${CLUSTER_NAME} --size=$2 --zone ${ZONE}
     fi
     ;;
 *)
