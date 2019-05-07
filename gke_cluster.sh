@@ -27,8 +27,10 @@ help()
 	echo $0:
 	echo "	create	Create a cluster gke with the specifications in CONSTANTS."
 	echo "	delete	Delete gke cluster"
-    	echo "	resize  Resize cluster ( resize N)"
+	echo "	resize  Resize cluster ( resize N)"
+	echo "	connect	Connect with Kubernetes's new environment"
 	echo "	help	show help"
+
 	echo ""		
 }
 
@@ -66,6 +68,11 @@ resize)
         gcloud container clusters resize ${CLUSTER_NAME} --size=$2 --zone ${ZONE}
     fi
     ;;
+
+connect)
+	gcloud container clusters get-credentials ${CLUSTER_NAME} --zone ${ZONE} --project ${PROJECT_ID}
+	kubectl config current-context
+	;;
 *)
 	help
 	;;
