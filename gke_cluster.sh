@@ -56,7 +56,7 @@ create)
 	;;
 
 delete)
-	    gcloud container clusters delete lab01 --zone "europe-west3-c"
+	    gcloud container clusters delete {CLUSTER_NAME} --zone ${ZONE}
     ;;
 
 resize)
