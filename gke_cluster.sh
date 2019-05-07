@@ -27,7 +27,7 @@ help()
 	echo $0:
 	echo "	create	Create a cluster gke with the specifications in CONSTANTS."
 	echo "	delete	Delete gke cluster"
-    echo "	resize  Resize cluster ( resize N)"
+    	echo "	resize  Resize cluster ( resize N)"
 	echo "	help	show help"
 	echo ""		
 }
@@ -56,7 +56,7 @@ create)
 	;;
 
 delete)
-	    gcloud container clusters delete {CLUSTER_NAME} --zone ${ZONE}
+	    gcloud container clusters delete ${CLUSTER_NAME} --zone ${ZONE}
     ;;
 
 resize)
