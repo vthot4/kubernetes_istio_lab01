@@ -5,7 +5,7 @@
 ##  Date:       06/05/2019
 ##  License:    MIT License
 ## 
-##  Purpose: gke cluster manage
+##  Purpose: gke cluster basic management
 ##
 ##########################################################################################
 
